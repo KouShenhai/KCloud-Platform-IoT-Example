@@ -1,0 +1,21 @@
+spring:
+  flyway:
+    # 起始版本
+    baseline-version: 0
+    # 历史记录
+    baseline-on-migrate: true
+    # 避免数据被意外清空
+    clean-disabled: false
+  application:
+    name: iot-flyway-postgresql
+  datasource:
+    dynamic:
+      p6spy: false
+      strict: false
+      datasource:
+        master:
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: org.postgresql.Driver
+          url: jdbc:postgresql://127.0.0.1:5432/test?tcpKeepAlive=true&reWriteBatchedInserts=true&ApplicationName=flyway-postgresql&useSSL=false
+          username: root
+          password: laokou123
