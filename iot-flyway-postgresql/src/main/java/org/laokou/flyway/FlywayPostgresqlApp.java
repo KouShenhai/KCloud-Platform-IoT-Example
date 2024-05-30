@@ -28,7 +28,7 @@ public class FlywayPostgresqlApp implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<T> list = new ArrayList<>();
         for (long i = 0; i < 100000; i++) {
-            list.add(new T(i, "name" + i));
+            list.add(new T(i, "name" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i));
         }
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10; i++) {

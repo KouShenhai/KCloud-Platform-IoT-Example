@@ -39,4 +39,57 @@ public class T implements Serializable {
 
     private String name;
 
+    private String a;
+    private String b;
+    private String c;
+    private String d;
+    private String e;
+    private String f;
+    private String g;
+    private String h;
+    private String i;
+    private String j;
+    private String k;
+    private String l;
+    private String m;
+    private String n;
+    private String o;
+    private String p;
+    private String q;
+    private String r;
+    private String s;
+    private String t;
+    private String u;
+    private String v;
+    private String w;
+    private String x;
+    private String y;
+    private String z;
+    private String aa;
+    private String bb;
+    private String cc;
+    private String dd;
+    private String ee;
+    private String ff;
+    private String gg;
+    private String hh;
+    private String ii;
+    private String jj;
+    private String kk;
+    private String ll;
+    private String mm;
+    private String nn;
+    private String oo;
+    private String pp;
+    private String qq;
+    private String rr;
+    private String ss;
+    private String tt;
+    private String uu;
+    private String vv;
+    private String ww;
+    private String xx;
+    private String yy;
+    private String zz;
+
 }
