@@ -49,15 +49,15 @@ public class FlywayPostgresqlApp implements CommandLineRunner {
 //        }
 //        System.out.println(System.currentTimeMillis() - start1);
 
-        transactionTemplate.executeWithoutResult(rollback -> {
-            try {
-                long start = System.currentTimeMillis();
-                mybatisUtil.batch(list, TPostgresqlMapper.class, TPostgresqlMapper::insert);
-                System.out.println(System.currentTimeMillis() - start);
-                throw new RuntimeException();
-            } catch (Exception e) {
-                rollback.setRollbackOnly();
-            }
-        });
+//        transactionTemplate.executeWithoutResult(rollback -> {
+//            try {
+//                long start = System.currentTimeMillis();
+//                mybatisUtil.batch(list, TPostgresqlMapper.class, TPostgresqlMapper::insert);
+//                System.out.println(System.currentTimeMillis() - start);
+//                throw new RuntimeException();
+//            } catch (Exception e) {
+//                rollback.setRollbackOnly();
+//            }
+//        });
     }
 }
