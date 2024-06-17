@@ -48,6 +48,7 @@ public class Test2 {
         System.out.println(f1.get());
         System.out.println(f2.get());
         System.out.println(f3.get());
+        System.out.println(f32.get());
         System.out.println(System.currentTimeMillis() - l);
     }
 
