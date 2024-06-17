@@ -1,6 +1,7 @@
 package org.laokou.flyway;
 
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.laokou.flyway.domain.T;
 import org.laokou.flyway.mapper.TMysqlMapper;
@@ -32,10 +33,12 @@ public class FlywayPostgresqlApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        List<T> list = new ArrayList<>();
-        for (long i = 0; i < 100000; i++) {
-            list.add(new T(i, "name" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i));
-        }
+//        List<T> list = new ArrayList<>();
+//        for (long i = 0; i < 100000; i++) {
+//            list.add(new T(i, "name" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i, "" + i));
+//        }
+        Page<T> page = tPostgresqlService.page(new Page<>(1, 1));
+        System.out.println(page.getRecords());
 //        long start = System.currentTimeMillis();
 //        for (int i = 0; i < 10; i++) {
 //            List<T> l = list.subList(i * 10000, (i + 1) * 10000);
