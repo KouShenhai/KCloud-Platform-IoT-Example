@@ -67,7 +67,6 @@ public class AESGCMExample {
 		System.out.println(originalText.length());
 		System.out.println(encryptedText.length());
 
-		List<String> list = new ArrayList<>();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i <= originalText.length() - 4; i++) {
 			String substring = originalText.substring(i, i + 4);
