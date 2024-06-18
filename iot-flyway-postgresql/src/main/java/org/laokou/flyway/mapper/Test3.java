@@ -33,7 +33,7 @@ public class Test3 {
         CompletableFuture<List<String>> f1 = CompletableFuture.supplyAsync(() -> List.of("33"),threadPoolExecutor);
         CompletableFuture<List<String>> f2 = CompletableFuture.supplyAsync(() -> List.of("33"),threadPoolExecutor);
         CompletableFuture<List<String>> f3 = CompletableFuture.supplyAsync(() -> List.of("3333"),threadPoolExecutor);
-        CompletableFuture.allOf(f1, f2, f3).join();
+        CompletableFuture.allOf(f1, f2, f3).get();
         System.out.println(f1.get());
         System.out.println(f2.get());
         System.out.println(f3.get());
