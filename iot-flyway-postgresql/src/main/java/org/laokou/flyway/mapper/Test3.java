@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * @author laokou
  */
-public class Test2 {
+public class Test3 {
 
    static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
 
@@ -33,6 +33,7 @@ public class Test2 {
         CompletableFuture<List<String>> f1 = CompletableFuture.supplyAsync(() -> List.of("33"),threadPoolExecutor);
         CompletableFuture<List<String>> f2 = CompletableFuture.supplyAsync(() -> List.of("33"),threadPoolExecutor);
         CompletableFuture<List<String>> f3 = CompletableFuture.supplyAsync(() -> List.of("3333"),threadPoolExecutor);
+        CompletableFuture.allOf(f1, f2, f3).join();
         System.out.println(f1.get());
         System.out.println(f2.get());
         System.out.println(f3.get());

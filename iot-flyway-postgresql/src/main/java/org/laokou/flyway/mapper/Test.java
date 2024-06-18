@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class Test {
 
-   static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(32, 32, 60, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
+   static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
 
     public static void main(String[] args) {
         long l = System.currentTimeMillis();
@@ -40,22 +40,12 @@ public class Test {
         CompletableFuture<Void> f1 = CompletableFuture.runAsync(() -> l1.set(List.of("33")),threadPoolExecutor);
         CompletableFuture<Void> f2 = CompletableFuture.runAsync(() -> l2.set(List.of("33")),threadPoolExecutor);
         CompletableFuture<Void> f3 = CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-        CompletableFuture.runAsync(() -> l3.set(List.of("3333")),threadPoolExecutor);
-
         CompletableFuture.allOf(f1, f2, f3).join();
         System.out.println(l1.get());
         System.out.println(l2.get());
         System.out.println(l3.get());
         System.out.println(System.currentTimeMillis() - l);
+        threadPoolExecutor.shutdown();
     }
 
 }
