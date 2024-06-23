@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
-            <version>4.3.0</version>
+            <version>4.3.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.h2database</groupId>
